@@ -1,0 +1,18 @@
+-- Register your custom spritesheets. 
+-- Make sure the relative paths match where you place your .png files in your mod folder.
+local texture_biden = define_texture("sprites/hired_help_biden.png", 2048, 2048)
+local texture_trump = define_texture("sprites/hired_help_trump.png", 2048, 2048)
+
+-- Target the Hired Help entity type
+local HIRED_HELP_TYPE = ENT_TYPE.MONS_HIREDHELP
+
+set_callback(function(entity)
+    -- Generate a random number: 1 or 2
+    local choice = prng:random(1, 2)
+    
+    if choice == 1 then
+        entity.texture = texture_biden
+    else
+        entity.texture = texture_trump
+    end
+end, ON.ENTITY_INITIALIZE, HIRED_HELP_TYPE)
