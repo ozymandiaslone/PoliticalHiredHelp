@@ -9,12 +9,12 @@ set_callback(function()
 
     -- Biden
     local biden_def = get_texture_definition(base.texture)
-    biden_def.texture_path = "sprites/hired_help_biden.png"
+    biden_def.texture_path = "sprites/biden.png"
     tex_biden = define_texture(biden_def)
 
     -- Trump
     local trump_def = get_texture_definition(base.texture)
-    trump_def.texture_path = "sprites/hired_help_trump.png"
+    trump_def.texture_path = "sprites/trump.png"
     tex_trump = define_texture(trump_def)
 
 end, ON.START)
