@@ -17,14 +17,21 @@ set_callback(function()
     trump_def.texture_path = "sprites/trump.png"
     tex_trump = define_texture(trump_def)
 
+		-- Xi
+		local xi_def = get_texture_definition(base.texture)
+		xi_def.texture_path = "sprites/xi.png"
+		tex_xi = define_texture(xi_def)
+
 end, ON.START)
 
 set_post_entity_spawn(function(ent)
-
-    if math.random(1,2) == 1 then
-        ent:set_texture(tex_biden)
-    else
-        ent:set_texture(tex_trump)
+		local choice = prng:random(1, 3)
+		if choice == 1 then
+			ent:set_texture(tex_biden)
+		elseif choice == 2 then
+			ent:set_texture(tex_trump)
+		elseif choice == 3 then
+			ent:set_texture(tex_xi)
     end
 
 end, SPAWN_TYPE.ANY, MASK.PLAYER, HIRED_HAND_TYPE)
